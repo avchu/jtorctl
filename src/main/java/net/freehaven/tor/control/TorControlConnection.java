@@ -472,7 +472,7 @@ public class TorControlConnection implements TorControlCommands {
      * secret that was used to generate the password.
      */
     public void authenticate(byte[] auth) throws IOException {
-        String cmd = "AUTHENTICATE " + Bytes.hex(auth) + "\r\n";
+        String cmd = "AUTHENTICATE " + auth.toString() + "\r\n";
         sendAndWaitForResponse(cmd, null);
     }
 
